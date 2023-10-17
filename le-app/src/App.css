@@ -1,0 +1,26 @@
+.bruh {
+  display: flex;
+  height: 100vh;
+  background-image: url('https://www.coindesk.com/resizer/TqA2HqIsnSIWF-zB04xzF1h4LYk=/1056x704/filters:quality(80):format(jpg)/cloudfront-us-east-1.images.arcpublishing.com/coindesk/YUS4V2QJWRCJZJDIPX4Q7BJNDQ.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+.content h1 {
+  color: inherit;
+  background-color: blueviolet;
+  padding: 12px 24px;
+  border-radius: 12px;
+}
