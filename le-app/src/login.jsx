@@ -11,10 +11,13 @@ import {
 } from '@mantine/core';
 import React from 'react';
 import classes from './login.module.css';
+import { useNavigate } from "react-router-dom";
 
-function login() {
+function Login() {
+  const navigate = useNavigate();
   const routeChange = () =>{ 
-    let path = "http://localhost:3000/register"; 
+    let path = "http://localhost:3000/register";
+    navigate.push(path);
   }
   return (
     <MantineProvider defaultColorScheme='dark'>
@@ -41,4 +44,4 @@ function login() {
     </MantineProvider>
   );
 }
-export default login;
+export default Login;
