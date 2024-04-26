@@ -6,16 +6,20 @@ import '@mantine/dates/styles.css';
 import '@mantine/dropzone/styles.css';
 import '@mantine/code-highlight/styles.css';
 import Registration from './registration.tsx';
+import MyButton from './ButtonMike.jsx';
 
 function App() {
   return (
     <Router>
       <Routes>
-        {/* <Route exact path="/" element={<Home />} /> // main page */ }
+        
+        <Route path="/" element={<MyButton />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Registration />} />
       </Routes>
     </Router>
+
+    
   );
 }
 export default App;
