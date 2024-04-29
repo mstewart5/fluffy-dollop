@@ -1,0 +1,60 @@
+body {
+  background-color: #4ecdff; /* Change the background color of the entire site */
+}
+
+/* Define styles for the wrapper */
+.wrapper {
+    min-height: 100vh;
+    background-size: cover;
+  }
+
+/* Define styles for the title */
+.title {
+  font-size: 50px;
+  font-weight: bold;
+  color: #009e1a;
+  margin-top: -50px;
+}
+
+/* Define styles for the posts wrapper */
+.postsWrapper {
+  margin-top: -700px;
+}
+
+/* Define styles for the posts */
+.post {
+  background-color: #38d7ff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgb(2, 195, 243);
+  margin-bottom: 20px;
+  color: #030202;
+}
+
+/* Define styles for the post details */
+.post-details {
+  font-size: 14px;
+  color: #030202;
+}
+
+/* Define styles for the grid */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-right: 430px;
+  margin-left: 50px;
+}
+
+/* Define styles for the grid column */
+.col {
+  width: calc(20% - 20px); /* Adjust the width to make each grid space smaller */
+  margin-bottom: 20px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.post img {
+  max-width: 100% !important; /* Set maximum width to prevent images from exceeding their container */
+  height: auto; /* Maintain aspect ratio */
+}
