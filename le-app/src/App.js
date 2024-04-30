@@ -7,15 +7,19 @@ import '@mantine/dropzone/styles.css';
 import '@mantine/code-highlight/styles.css';
 import Registration from './registration.tsx';
 import MyButton from './ButtonMike.jsx';
+import Mainpage from './mainpage.jsx';
+import { posts } from './postsData';
 
 function App() {
   return (
     <Router>
+
       <Routes>
         
         <Route path="/" element={<MyButton />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Registration />} />
+        <Route path="/mainpage" element={<Mainpage posts={posts} />} />
       </Routes>
     </Router>
 

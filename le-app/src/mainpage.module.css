@@ -1,0 +1,109 @@
+body {
+  background-color: #25d3ff;
+}
+
+/* Define styles for the post details */
+.postDetails {
+  font-size: 20px;
+  color: #000000;
+}
+
+.gridTitle {
+  text-align: center;
+  position: absolute;
+  font-size: 25px;
+  top: 15%; /* Adjust this value to raise or lower the text */
+  left: 50%;
+  transform: translateX(-50%);
+  color: #000000;
+}
+
+.gridTitle2 {
+  text-align: center;
+  position: absolute;
+  font-size: 25px;
+  top: 935px; /* Adjust this value to raise or lower the text */
+  left: 50%;
+  transform: translateX(-50%);
+  color: #000000;
+}
+
+/* Define styles for the wrapper */
+.wrapper {
+    min-height: 100vh;
+    background-size: cover;
+  }
+
+  /* Define styles for the site title */
+.site {
+  font-size: 50px;
+  font-weight: bold;
+  color: #009e1a;
+  margin-right: 1500px;
+}
+
+/* Define styles for the posts wrapper */
+.postsWrapper {
+  margin-top: -700px;
+}
+
+/* Define styles for the grid */
+.grid {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  justify-content: space-between;
+  margin-right: 3.5%;
+  margin-left: 2%;
+  margin-bottom: 10%;
+}
+
+/* Define styles for the grid column */
+.col {
+  display: flex;
+  border: 5px solid #000000;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: calc(30% - 20px);
+  margin-bottom: 10px;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.postImg {
+  max-width: 100%;
+  height: auto;
+}
+
+.button {
+  position: absolute;
+  top: 160px;
+  left: 84%;
+  background-color: green;
+    color: white;
+    border: 40px;
+    font-size: 30px;
+    cursor: pointer;
+    margin: 30px;
+    height: 45px;
+    flex: 0 0 50%;
+    bottom: 10%;
+    transform: translate(0%, 10%);
+}
+
+.button2 {
+  position: absolute;
+  top: 950px;
+  left: 82%;
+  background-color: green;
+    color: white;
+    border: 40px;
+    font-size: 30px;
+    cursor: pointer;
+    margin: 30px;
+    height: 45px;
+    flex: 0 0 50%;
+    bottom: 10%;
+    transform: translate(0%, 10%);
+}
