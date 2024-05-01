@@ -5,7 +5,7 @@ import '@mantine/core/styles.css';
 import '@mantine/dates/styles.css';
 import '@mantine/dropzone/styles.css';
 import '@mantine/code-highlight/styles.css';
-import Registration from './registration.tsx';
+import Registration from './registration.jsx';
 import MyButton from './ButtonMike.jsx';
 import Mainpage from './mainpage.jsx';
 import { posts } from './postsData';
