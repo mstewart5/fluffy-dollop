@@ -1,3 +1,5 @@
+//To-Do change name to LandingPage
+
 import React from 'react'
 import {
     Button, 

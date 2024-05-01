@@ -1,3 +1,7 @@
+// if you hit f11 the text and buttons go to different spots
+// naviagate to MakeOffer and MakeRequest
+// 
+
 import React from 'react';
 import { 
   MantineProvider, 
