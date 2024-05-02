@@ -21,7 +21,7 @@ function MakeRequest() {
   const [description, setDescription] = useState("");
   const [location, setLocation] = useState("");
   const [contactInfo, setContactInfo] = useState("");
-  const [imageURL, setImageURL] = useState("");
+  const [imageUrl, setImageURL] = useState("");
   const [author, setAuthor] = useState("");
   const [publishedDate, setPublishedDate] = useState("");
   const [showSuccessNotif, setSucessNotif] = useState(false);
@@ -30,12 +30,12 @@ function MakeRequest() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     axios
-      .post("http:localhost:8080/post/save-offer", {
+      .post("http://localhost:8080/post/save-request", {
         title: title,
-        description: description,
+       /* description: description,
         location: location,
-        contactInfo: contactInfo,
-        imageURL: imageURL,
+        contactInfo: contactInfo, */
+        imageUrl: imageUrl,
         author: author /*should be automatic*/,
         publishedDate: publishedDate /*needs to be automatic*/,
       })
@@ -130,7 +130,7 @@ function MakeRequest() {
               radius="md"
               label="Image URL"
               placeholder="Image URL"
-              value={imageURL}
+              value={imageUrl}
               onChange={(e) => setImageURL(e.target.value)}
             />
             <Center>
