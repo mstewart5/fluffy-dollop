@@ -21,7 +21,7 @@ function MakeOfferTwo() {
   const [description, setDescription] = useState("");
   const [location, setLocation] = useState("");
   const [contactInfo, setContactInfo] = useState("");
-  const [imageURL, setImageURL] = useState("");
+  const [imageUrl, setImageURL] = useState("");
   const [author, setAuthor] = useState("");
   const [publishedDate, setPublishedDate] = useState("");
   const [showSuccessNotif, setSucessNotif] = useState(false);
@@ -35,7 +35,7 @@ function MakeOfferTwo() {
         //description: description,
         //location: location,
         //contactInfo: contactInfo,
-        imageURL: imageURL,
+        imageUrl: imageUrl,
         author: author /*should be automatic*/,
         publishedDate: publishedDate /*needs to be automatic*/,
       })
@@ -130,7 +130,7 @@ function MakeOfferTwo() {
               radius="md"
               label="Image URL"
               placeholder="Image URL"
-              value={imageURL}
+              value={imageUrl}
               onChange={(e) => setImageURL(e.target.value)}
             />
             <Center>
