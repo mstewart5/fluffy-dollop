@@ -1,7 +1,3 @@
-// if you hit f11 the text and buttons go to different spots
-// naviagate to MakeOffer and MakeRequest
-// 
-
 import React, { useState, useEffect } from 'react';
 import { 
   MantineProvider, 
@@ -13,27 +9,31 @@ import styles from './mainpage.module.css';
 import GridContainer from './GridContainer';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+
 function Mainpage() {
   const navigate = useNavigate();
   const goToPage = (page) => {
     navigate(page);
   };
 
-  const[posts, setPosts] = useState([]);
+  const [offers, setOffers] = useState([]);
+  const [requests, setRequests] = useState([]);
+
   useEffect(() => {
     const getPosts = async () => {
-      axios
-      .get("http://localhost:8080/post/get-offers")
-      .then((response) => {
-        setPosts(response.data)
-        console.log("Fetched posts")
-      })
-      .catch((error) => {
-        console.log(error)
-      });
-    }
+      try {
+        const offersResponse = await axios.get("http://localhost:8080/post/get-offers");
+        const requestsResponse = await axios.get("http://localhost:8080/post/get-requests");
+        setOffers(offersResponse.data);
+        setRequests(requestsResponse.data);
+        console.log("Fetched posts");
+      } catch (error) {
+        console.error(error);
+      }
+    };
     getPosts();
-  }, [])
+  }, []);
+
   return (
     <MantineProvider defaultColorScheme='dark'>
       <div className={styles.wrapper}>
@@ -48,17 +48,22 @@ function Mainpage() {
         <h2>Share Offers</h2>
       </div>
 
-      <GridContainer posts={posts} />
-      
-      {/* <div className={styles.gridTitle2}>
+      <GridContainer posts={offers} />
+
+      <div className={styles.gridTitle}>
         <h2>Share Requests</h2>
       </div>
 
-      <GridContainer posts={posts} marginBottom="20px" /> */}
+      <GridContainer posts={requests} />
 
-      <Button className={styles.button} onClick={() => goToPage("/makeoffer")}>Make Offer</Button>
-
-      <Button className={styles.button2} onClick={() => goToPage("/request")}>Make Request</Button>
+      <div className={styles.buttons}>
+        <Button className={styles.button} onClick={() => goToPage("/makeoffer")}>
+          Make Offer
+        </Button>
+        <Button className={styles.button} onClick={() => goToPage("/request")}>
+          Make Request
+        </Button>
+      </div>
     </MantineProvider>
   );
 }
