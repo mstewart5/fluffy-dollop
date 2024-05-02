@@ -2,7 +2,7 @@
 // naviagate to MakeOffer and MakeRequest
 // 
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   MantineProvider, 
   Paper, 
@@ -11,8 +11,29 @@ import {
 } from '@mantine/core';
 import styles from './mainpage.module.css';
 import GridContainer from './GridContainer';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+function Mainpage() {
+  const navigate = useNavigate();
+  const goToPage = (page) => {
+    navigate(page);
+  };
 
-function Mainpage({ posts }) {
+  const[posts, setPosts] = useState([]);
+  useEffect(() => {
+    const getPosts = async () => {
+      axios
+      .get("http://localhost:8080/post/get-offers")
+      .then((response) => {
+        setPosts(response.data)
+        console.log("Fetched posts")
+      })
+      .catch((error) => {
+        console.log(error)
+      });
+    }
+    getPosts();
+  }, [])
   return (
     <MantineProvider defaultColorScheme='dark'>
       <div className={styles.wrapper}>
@@ -29,15 +50,15 @@ function Mainpage({ posts }) {
 
       <GridContainer posts={posts} />
       
-      <div className={styles.gridTitle2}>
+      {/* <div className={styles.gridTitle2}>
         <h2>Share Requests</h2>
       </div>
 
-      <GridContainer posts={posts} marginBottom="20px" />
+      <GridContainer posts={posts} marginBottom="20px" /> */}
 
-      <Button className={styles.button}>Make Offer</Button>
+      <Button className={styles.button} onClick={() => goToPage("/makeoffer")}>Make Offer</Button>
 
-      <Button className={styles.button2}>Make Request</Button>
+      <Button className={styles.button2} onClick={() => goToPage("/request")}>Make Request</Button>
     </MantineProvider>
   );
 }

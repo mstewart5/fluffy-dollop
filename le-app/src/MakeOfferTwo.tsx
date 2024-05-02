@@ -30,11 +30,11 @@ function MakeOfferTwo() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     axios
-      .post("http:localhost:8080/post/save-offer", {
+      .post("http://localhost:8080/post/save-offer", {
         title: title,
-        description: description,
-        location: location,
-        contactInfo: contactInfo,
+        //description: description,
+        //location: location,
+        //contactInfo: contactInfo,
         imageURL: imageURL,
         author: author /*should be automatic*/,
         publishedDate: publishedDate /*needs to be automatic*/,
@@ -73,7 +73,7 @@ function MakeOfferTwo() {
           </Text>
           <form onSubmit={handleSubmit}>
             <TextInput
-              required
+           //   required
               mt="md"
               radius="md"
               label="Author"
@@ -82,7 +82,7 @@ function MakeOfferTwo() {
               onChange={(e) => setAuthor(e.target.value)}
             />
             <TextInput
-              required
+           //   required
               mt="md"
               radius="md"
               label="Published Date"
@@ -91,7 +91,7 @@ function MakeOfferTwo() {
               onChange={(e) => setPublishedDate(e.target.value)}
             />
             <TextInput
-              required
+            //  required
               mt="md"
               radius="md"
               label="Title"
@@ -100,7 +100,7 @@ function MakeOfferTwo() {
               onChange={(e) => setTitle(e.target.value)}
             />
             <TextInput
-              required
+           //   required
               mt="md"
               radius="md"
               label="Description"
@@ -117,7 +117,7 @@ function MakeOfferTwo() {
               onChange={(e) => setLocation(e.target.value)}
             />
             <TextInput
-              required
+           //   required
               mt="md"
               radius="md"
               label="Contact Information"
