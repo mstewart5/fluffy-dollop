@@ -6,10 +6,9 @@ import {
   Button
 } from '@mantine/core';
 import styles from './mainpage.module.css';
-import GridContainer from './GridContainer';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-
+import NewGrid from './NewGridContainer';
 function Mainpage() {
   const navigate = useNavigate();
   const goToPage = (page) => {
@@ -36,25 +35,25 @@ function Mainpage() {
 
   return (
     <MantineProvider defaultColorScheme='dark'>
-      <div className={styles.wrapper}>
+      {/* <div className={styles.wrapper}>
         <Paper className={styles.form} radius={0} p={2}>
           <Title order={2} className={styles.site} ta="center" mt="md" mb={2}>
             SharingIsCaring
           </Title>
         </Paper>
-      </div>
+      </div> */}
 
       <div className={styles.gridTitle}>
         <h2>Share Offers</h2>
       </div>
 
-      <GridContainer posts={offers} />
+      <NewGrid data={offers} />
 
       <div className={styles.gridTitle}>
         <h2>Share Requests</h2>
       </div>
 
-      <GridContainer posts={requests} />
+      <NewGrid data={requests} />
 
       <div className={styles.buttons}>
         <Button className={styles.button} onClick={() => goToPage("/makeoffer")}>
