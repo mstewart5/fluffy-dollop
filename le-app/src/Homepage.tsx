@@ -27,9 +27,11 @@ export default function Homepage() {
             </Button>
           </Group>
 
-          <Container size="lg" py="xl" className={classes.badge}>
+          {/* <Container size="lg" py="xl" className={classes.badge}> */}
+            
             <Group justify="center" >
-              <Badge variant="filled" size="lg">
+              <Badge variant="filled" size="lg" className={classes.badge}>
+
                 Driven By You
               </Badge>
             </Group>
@@ -38,11 +40,11 @@ export default function Homepage() {
               Become a beacon of your community
             </Title>
 
-            <Text c="dimmed" className={classes.description} ta="center" mt="md">
+            <Text c="dimmed" className={classes.description} ta="left" mt="md">
               Mower just gave out? Sprinkler system faulty? Need dogsitting? We all find ourselves in a bit of a hiccup at times,
               that's why we built this website to make it easier than ever to connect with neighbors.
             </Text>
-          </Container>
+          {/* </Container> */}
         </Container>
 
       </div>
