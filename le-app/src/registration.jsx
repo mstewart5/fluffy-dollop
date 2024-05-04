@@ -1,27 +1,20 @@
 import React, { useState } from 'react';
 import { useNavigate  } from 'react-router-dom';
-import { useToggle, upperFirst } from '@mantine/hooks';
-import { useForm } from '@mantine/form';
+import { upperFirst } from '@mantine/hooks';
 import {
   TextInput,
   PasswordInput,
   Text,
   Paper,
   Group,
-  PaperProps,
   Button,
-  Divider,
-  Checkbox,
-  Anchor,
   Stack,
-  Grid,
   Center,
-  Alert,
   MantineProvider,
   Notification,
 } from '@mantine/core';
 import axios from 'axios';
-import classes from './registration.module.css';
+import classes from './css/registration.module.css';
 
 
 function Registration() {
@@ -48,7 +41,8 @@ function Registration() {
      }
 
   return (
-    <MantineProvider>
+    <MantineProvider defaultColorScheme='dark'>
+      <div className={classes.background}>
     <Center>
     <Paper radius="md" p="xl" withBorder className={classes.login}>
       <Text size="lg" fw={500}>
@@ -119,6 +113,7 @@ function Registration() {
       </form>
     </Paper>
     </Center>
+    </div>
     </MantineProvider>
   );
 }

@@ -2,7 +2,6 @@ import {
   Paper, 
   TextInput, 
   PasswordInput, 
-  Checkbox, 
   Button, 
   Title, 
   Text, 
@@ -10,7 +9,7 @@ import {
   MantineProvider,
 } from '@mantine/core';
 import React, { useState } from 'react';
-import classes from './login.module.css';
+import classes from './css/login.module.css';
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 
@@ -32,6 +31,7 @@ function Login() {
         console.log("Logged in")
         const sessionId = response.data;
         document.cookie = `sessionId=${sessionId}; path=/;`
+        localStorage.setItem("username", username)
         navigate("/mainpage")
       })
       .catch((error) => {

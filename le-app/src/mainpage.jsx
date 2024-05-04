@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  MantineProvider, 
-  Paper, 
+import {
+  MantineProvider,
   Title,
-  Button
+  Button,
+  SimpleGrid,
+  Group,
 } from '@mantine/core';
-import styles from './mainpage.module.css';
+import styles from './css/mainpage.module.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import NewGrid from './NewGridContainer';
+import OfferContainer from './OfferContainer';
+import HeaderSearch from './header';
+import RequestContainer from './RequestContainer';
+import ErrorPage from './ErrorPage';
 function Mainpage() {
   const navigate = useNavigate();
   const goToPage = (page) => {
@@ -33,38 +37,40 @@ function Mainpage() {
     getPosts();
   }, []);
 
-  return (
-    <MantineProvider defaultColorScheme='dark'>
-      {/* <div className={styles.wrapper}>
-        <Paper className={styles.form} radius={0} p={2}>
-          <Title order={2} className={styles.site} ta="center" mt="md" mb={2}>
-            SharingIsCaring
-          </Title>
-        </Paper>
-      </div> */}
+  if (localStorage.getItem("username")) {
+    return (
+      <MantineProvider defaultColorScheme='dark'>
+        <SimpleGrid cols={1} spacing="xs" verticalSpacing="xl">
+          <HeaderSearch />
 
-      <div className={styles.gridTitle}>
-        <h2>Share Offers</h2>
-      </div>
+          <Group justify="flex-end" gap="lg">
+            <Title order={2} align="center">Share Offers</Title>
+            <Button className={styles.button} onClick={() => goToPage("/makeoffer")}>
+              Make Offer
+            </Button>
+          </Group>
 
-      <NewGrid data={offers} />
+          <OfferContainer data={offers} />
 
-      <div className={styles.gridTitle}>
-        <h2>Share Requests</h2>
-      </div>
+          <Group justify="flex-end" gap="lg">
+            <Title order={2} style={{ textAlign: 'center' }} >Share Requests</Title>
+            <Button className={styles.button} onClick={() => goToPage("/request")}>
+              Make Request
+            </Button>
+          </Group>
 
-      <NewGrid data={requests} />
+          <RequestContainer data={requests} />
+        </SimpleGrid>
 
-      <div className={styles.buttons}>
-        <Button className={styles.button} onClick={() => goToPage("/makeoffer")}>
-          Make Offer
-        </Button>
-        <Button className={styles.button} onClick={() => goToPage("/request")}>
-          Make Request
-        </Button>
-      </div>
-    </MantineProvider>
-  );
+      </MantineProvider>
+    );
+  } else {
+    return (
+      <MantineProvider>
+        <ErrorPage />
+      </MantineProvider>
+    )
+  }
 }
 
 export default Mainpage;

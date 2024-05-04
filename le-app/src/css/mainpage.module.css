@@ -1,0 +1,64 @@
+/* Define styles for the wrapper */
+.wrapper {
+  min-height: 100vh;
+  background-color: #25d3ff;
+}
+
+/* Define styles for the site title */
+.site {
+  font-size: 50px;
+  font-weight: bold;
+  color: #009e1a;
+  text-align: center;
+}
+
+/* Define styles for the grid title */
+.gridTitle {
+  text-align: center;
+  font-size: 25px;
+  color: #000000;
+  margin-top: 20px;
+  display: inline
+}
+
+/* Define styles for the buttons container */
+.buttons {
+  display: inline-block;
+  margin-top: 20px;
+}
+
+/* Define styles for the buttons */
+.button {
+  margin: 0 10px;
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+
+}
+
+.caroseulItem {
+  border-color: #000000;
+  border-radius: 5px;
+  border: solid;
+  margin: 10px;
+}
+
+.box {
+  align-items: center;
+  text-align: center;
+}
+
+ .slide {
+  margin-top: 25px;
+  max-width: 250px;
+  text-align: left;
+  word-wrap: break-word;
+  transition: transform .2s;
+}
+
+.slide:hover {
+  position: static;
+  cursor: pointer;
+  border: 2px solid;
+  transform: scale(1.1);
+} 

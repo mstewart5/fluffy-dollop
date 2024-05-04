@@ -1,0 +1,17 @@
+.background {
+    background-image: url(https://img.freepik.com/premium-photo/small-cute-white-west-highland-terrier-dog-lying-grass-park-pet-portrait_284815-4416.jpg?w=2000);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.login {
+    width: auto;
+    margin-top: 30vh;
+    background: rgba( 0, 0, 0, 0.6 );
+    backdrop-filter: blur(10px);
+}
+
+.notif {
+    white-space: pre-line;
+}
